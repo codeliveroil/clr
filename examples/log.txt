@@ -1,0 +1,6 @@
+2019/07/16 13:23:47 [INFO]  <websocket> Received request: background_subtract
+2019/07/16 13:23:47 [INFO]  <iproc>     Processing image. Resolution=640x480
+2019/07/16 13:23:47 [INFO]  <iproc>     Extracting background
+2019/07/16 13:23:47 [ERROR] <iproc>     Object spec not found
+2019/07/16 13:23:47 [DEBUG] <iproc>     Destructing session
+2019/07/16 13:23:47 [INFO]  <websocket> Sending response: 500 - internal server error

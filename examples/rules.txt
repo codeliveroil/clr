@@ -1,0 +1,7 @@
+INFO~cyan
+ERROR~red~line
+DEBUG~darkgray
+\d{4}/\d{2}/\d{2}~white
+Received request~pink
+Sending response~57
+640x480~black,yellow
