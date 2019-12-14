@@ -1,0 +1,4 @@
+github.com/codeliveroil/go-util v0.0.0-20190729190031-8ddcead11aca h1:6Qk2QU6p/rEFkyEdVSjrU5fGzQdr2mbDpbn186w4X/o=
+github.com/codeliveroil/go-util v0.0.0-20190729190031-8ddcead11aca/go.mod h1:t4H7/XgDivnA3A/v1crXzeTMx1zDsNLmunBY52+gyIs=
+github.com/codeliveroil/niceflags v0.0.0-20191214040432-93748c812d90 h1:lnhmqD/rTBk+E3Q+35PBHMvOeBPGYo0IXGfm0kwsk0k=
+github.com/codeliveroil/niceflags v0.0.0-20191214040432-93748c812d90/go.mod h1:irK8VT7NannXpC0XT8EcfoGsPcplgrO2TYbnkFv4Ot8=
