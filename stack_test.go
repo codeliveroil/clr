@@ -8,16 +8,16 @@ import (
 
 func TestPush(t *testing.T) {
 	s := &stack{}
-	test.Compare(t, len(*s), 0)
+	test.Compare(t, s.size, 0)
 
 	s.push("a")
-	test.Compare(t, s, &stack{"a"})
+	test.Compare(t, s.toArray(), []colorCode{"a"})
 
 	s.push("b")
-	test.Compare(t, s, &stack{"b", "a"})
+	test.Compare(t, s.toArray(), []colorCode{"b", "a"})
 
 	s.push("b")
-	test.Compare(t, s, &stack{"b", "b", "a"})
+	test.Compare(t, s.toArray(), []colorCode{"b", "b", "a"})
 }
 
 func TestPop(t *testing.T) {
@@ -27,36 +27,36 @@ func TestPop(t *testing.T) {
 	s.push("b")
 	s.push("b")
 
-	verify := func(expE colorCode, expOK bool, expS *stack) {
+	verify := func(expE colorCode, expOK bool, expS []colorCode) {
 		t.Helper()
 		e, ok := s.pop()
 		test.Compare(t, e, expE)
 		test.Compare(t, ok, expOK)
-		test.Compare(t, s, expS)
+		test.Compare(t, s.toArray(), expS)
 	}
 
-	verify("b", true, &stack{"b", "a"})
-	verify("b", true, &stack{"a"})
-	verify("a", true, &stack{})
-	verify("", false, &stack{})
+	verify("b", true, []colorCode{"b", "a"})
+	verify("b", true, []colorCode{"a"})
+	verify("a", true, []colorCode{})
+	verify("", false, []colorCode{})
 }
 
 func TestPeek(t *testing.T) {
 	s := &stack{}
 
-	verify := func(expE colorCode, expOK bool, expS *stack) {
+	verify := func(expE colorCode, expOK bool, expS []colorCode) {
 		t.Helper()
 		e, ok := s.peek()
 		test.Compare(t, e, expE)
 		test.Compare(t, ok, expOK)
-		test.Compare(t, s, expS)
+		test.Compare(t, s.toArray(), expS)
 	}
 
-	verify("", false, &stack{})
+	verify("", false, []colorCode{})
 
 	s.push("a")
-	verify("a", true, &stack{"a"})
+	verify("a", true, []colorCode{"a"})
 
 	s.push("b")
-	verify("b", true, &stack{"b", "a"})
+	verify("b", true, []colorCode{"b", "a"})
 }
